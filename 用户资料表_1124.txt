@@ -1,0 +1,165 @@
+表名：member   用户资料表
+mid    int（10）			用户id
+username    varchar(30)	用户名 
+password  varchar(32)  		用户密码
+power_group_id  varchar(20)   用户组ID
+status 		tinyint 1   状态  1正常 2罢工
+jointime	注册时间	int(10) unsigned NOT NULL default '0'
+//joinip	注册IP	char(15) NOT NULL default ''
+logintime	登录时间	int(10) unsigned NOT NULL default '0'
+loginip	登录IP	char(15) NOT NULL default ''
+
+uname   varchar(36) NOT NULL default ''   名称   1
+sex		enum('男','女','保密') NOT NULL default '保密'   性别  
+birthday	int(11) NOT NULL default '0'   生日
+xuexing   char(2) NOT NULL default ''   血型
+jzcity	varchar  20   居住城市
+hkcity	varchar  20	  户口地
+xueli	varchar  20	  学历
+hunyin	enum('未婚','已婚','保密') NOT NULL default '保密'  婚姻
+phone	varchar	 15		联系电话
+email	varchar  30  	邮箱
+address	varchar	 200	联系地址
+face	varchar	 100	照片
+
+department  varchar	50 所在院系
+specialty	varchar	50	专业
+class  varchar	20	班级
+studentid  varchar	20	学号
+politics 	varchar	20  政治面貌
+health	varchar	100	健康状况 27
+school	varchar	100 现读学校 24
+grxx_uptime	int 10 个人资料更新时间
+zxsid   int 10 咨询师ID
+zxtime   varchar 255 期望咨询时间
+
+mbti_id		MBTI职业倾向性测评
+mbti_time
+hld_id		霍兰德兴趣测评
+hld_time
+zyfxc_id	职业分析用表C
+zyfxc_time
+zyfxd_id	职业分析用表D
+zyfxd_time
+
+
+表名：member_xs1	学生资料1	--普通扩展资料
+id		int（10）	id
+mid		int（10）	用户id
+problem	varchar 100		面临的问题28     ---多选框
+confused  varchar 255	面临的困惑28-1
+resolve	  varchar 255	希望解决 28-2
+target_school		varchar 20  目标学校 29
+target_specialty	varchar 100  目标专业 30
+target_company		varchar 50  目标企业 31
+target_zhiwu		varchar 20  目标职务 32
+target_salary		mediumint(8)  目标薪资 31
+target_job			varchar 20  目标工作 32
+honor	text	所获证书、荣誉
+shetuan	text	参加过哪些社团 
+peixun	text	参加过哪些培训
+
+
+表名：member_xs2    学生资料2   --家庭情况
+id		int（10）	id
+mid 	int（10）	用户id
+family	varchar	20	家庭成员
+name	varchar	20	姓名
+unit	varchar	50	工作单位
+job		varchar	20	职务
+phone		varchar	20	联系方式
+
+表名：member_xs3    学生资料3   --教育背景
+id		int（10）	id
+mid 	int（10）	用户id
+name	varchar	50	教育经验-1
+time	varchar	50	时间33-1
+school	varchar	100	学校33-2
+specialty	varchar	50	专业 33-3
+score	varchar	100	学习成绩 33-4
+
+表名：member_xs4    学生资料4   --社会实践
+id		int（10）	id
+mid 	int（10）	用户id
+sjname	varchar	50	社会实践名称 35
+time	varchar	50	时间35-1
+unit	varchar	50	组织单位35-2
+content	varchar	255	实践内容35-3
+harvest	varchar	255	实践收获35-4
+
+
+表名：member_dz1    大众资料1 ---普通扩展专属信息
+id		int（10）	id
+mid		int（10）	用户id
+//school	varchar	100 	毕业院校
+//specialty	varchar	50	专业
+gzage	tinyint(2) 	工作年龄
+zaizhi	tinyint(1)	是否在职  1 在 -1不在
+unit	varchar	50	工作单位
+job		varchar	20	职务
+salary  mediumint(8)  薪资水平
+industry  varchar 20 行业     ---具体下拉填写
+problem	varchar 250		面临的问题     ---多选框
+confused  varchar 255	面临的困惑
+resolve	  varchar 255	希望解决
+target_job	varchar 20  目标职务
+target_salary  mediumint(8)  目标薪资
+honor	text	所获证书、荣誉，参加培训  22
+
+表名：member_dz2    大众资料2   --教育背景
+id		int（10）	id
+mid 	int（10）	用户id
+time	varchar	50	时间
+school	varchar	100	学校
+specialty	varchar	50	专业
+xueli	varchar  20	  学历
+
+表名：member_dz3    大众资料3   --工作背景
+id		int（10）	id
+mid 	int（10）	用户id
+time	varchar	50	时间
+unit	varchar	50	工作单位
+job		varchar	20	职务
+job_content	varchar	100	工作内容
+salary  mediumint(8)  薪资水平
+cause 	varchar	100	离职原因
+
+表名：member_ks1    考生资料1 ---普通扩展专属信息
+id		int（10）	id
+mid		int（10）	用户id
+//school	varchar	100 	毕业院校 36
+//specialty	varchar	50	专业 37
+xueli	varchar  20	  学历 38
+unit	varchar	50	工作单位 39
+job		varchar	20	职务 40
+gzage	tinyint(2) 	工作年龄 41
+idcard	varchar	32	身份证号码 42
+pxqici	varchar	20	培训期次 43
+pxaddress	varchar	100	培训地点 44
+
+
+表名：cp_mbti    测评记录 MBTI
+id		int（10）	id
+mid		int（10）	用户id
+name	varchar	100 	问卷名称
+uptime	int 10	测评时间 
+
+表名：cp_hld    测评记录 霍兰德
+id		int（10）	id
+mid		int（10）	用户id
+name	varchar	100 	问卷名称
+uptime	int 10	测评时间
+
+表名：cp_zyfxc    测评记录 职业分析C
+id		int（10）	id
+mid		int（10）	用户id
+name	varchar	100 	问卷名称
+uptime	int 10	测评时间
+
+表名：cp_zyfxd    测评记录 职业分析D
+id		int（10）	id
+mid		int（10）	用户id
+name	varchar	100 	问卷名称
+uptime	int 10	测评时间
+
+
